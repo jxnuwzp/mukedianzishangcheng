@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="doAction.php" method="post" enctype="multipart/form-data">
+  请选择上传文件:  <input type="file" name="myFile"/><br/>
+    <input type="submit" value="上传"/>
+</form>
+</body>
+</html>
