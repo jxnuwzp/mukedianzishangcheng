@@ -1,4 +1,13 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: tete
+ * Date: 2017/2/17
+ * Time: 22:34
+ */
+require_once '../lib/string.func.php';
+header("content-type:text/html;charset=utf-8");
+//print_r($_FILES);
 /*
  * 构建上传文件信息
  */
@@ -88,5 +97,7 @@ function uploadFile($path="uploads",$allowExt=array("gif","jpeg","png","jpg","wb
             echo $mes;
         }
     }
-    return $uploadedFiles;
+        return $uploadedFiles;
 }
+$fileInfo=uploadFile();
+print_r($fileInfo);

@@ -10,6 +10,7 @@ $error=$_FILES['myFile']['error'];
 $size=$_FILES['myFile']['size'];
 $allowExt=array("gif","jpeg","jpg","png","wbmp");
 $maxSize=1512000;
+$imgFlag=true;
 //判断下错误信息
 if ($error==UPLOAD_ERR_OK){
     $ext=getExt($filename);
@@ -21,7 +22,15 @@ if ($error==UPLOAD_ERR_OK){
     if ($size>$maxSize){
         exit("文件过大");
     }
-//文件是否是通过HTTP POST方式上传上来的
+    if ($imgFlag){
+        $info=getimagesize($tmp_name);
+        //var_dump($info);exit;
+        if (!$info){
+            exit("不是真正图片类型");
+        }
+    }
+
+    //文件是否是通过HTTP POST方式上传上来的
 
     $filename=getUniName().".".$ext;
     $path="uploads";
