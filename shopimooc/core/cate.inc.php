@@ -41,3 +41,9 @@ function delCate($where){
     return $mes;
 }
 
+//得到所有分类
+function getAllCate(){
+    $sql="select id,cName from imooc_cate";
+    $rows=fetchAll($sql);
+    return $rows;
+}

@@ -72,6 +72,9 @@ function delete($table,$where=null){
         $result=mysql_query($sql);
         return mysql_num_rows($result);
     }
-
+    //得到上一步插入记录ID号
+    function getInsertId(){
+        return mysql_insert_id();
+    }
 
 
